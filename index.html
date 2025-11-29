@@ -3,152 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peng, Yifei - 简历</title>
+    <title>彭逸飞 - 简历</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: "Microsoft YaHei", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f5f7fa;
         }
+
         h1, h2, h3 {
             color: #2c3e50;
             border-bottom: 1px solid #ecf0f1;
             padding-bottom: 5px;
+            margin-top: 20px;
         }
+
         h1 {
             text-align: center;
             border-bottom: 2px solid #3498db;
+            padding: 10px 0;
+            margin-top: 0;
         }
+
         .section {
             margin-bottom: 25px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         ul {
             padding-left: 20px;
         }
+
         li {
             margin-bottom: 5px;
         }
+
         .date {
             float: right;
             font-weight: normal;
             color: #7f8c8d;
         }
+
         .project-title {
             font-weight: bold;
         }
+
         .cooperator {
             font-style: italic;
             color: #7f8c8d;
         }
-        .paper-list {
+
+        .paper-list, .patent-list {
             list-style-type: decimal;
             padding-left: 25px;
         }
-        .patent-list {
-            list-style-type: decimal;
-            padding-left: 25px;
-        }
+
         .summary {
             background-color: #f8f9fa;
             padding: 15px;
             border-left: 4px solid #3498db;
         }
+
+        /* 轮播图样式 */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .carousel-slide {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator.active {
+            background-color: white;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px 15px 10px;
+        }
+
+        .carousel-caption h3 {
+            color: white;
+            border-bottom: none;
+            margin: 0 0 5px;
+            padding: 0;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 300px;
+            }
+
+            .carousel-caption {
+                padding: 15px 10px 5px;
+            }
+
+            .carousel-caption h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                height: 200px;
+            }
+
+            .carousel-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Peng, Yifei - 简历</h1>
+
+    <h1>Yifei Peng - Curriculum Vitae</h1>
 
     <div class="section">
-        <h2>教育背景</h2>
+        <h2>Education</h2>
         <ul>
-            <li><strong>电子科技大学</strong> - 网络工程 - 研究生(博士) - <span class="date">2021.9-</span></li>
-            <li><strong>电子科技大学</strong> - 网络工程 - 研究生(硕士) - <span class="date">2019.9-2021.6</span></li>
-            <li><strong>郑州大学</strong> - 通信工程 - 本科 - <span class="date">2015.9-2019.6</span></li>
+            <li><strong>University of Electronic Science and Technology of China</strong> - Network Engineering - Ph.D. Candidate - <span class="date">2021.9-</span></li>
+            <li><strong>University of Electronic Science and Technology of China</strong> - Network Engineering - Master's Degree - <span class="date">2019.9-2021.6</span></li>
+            <li><strong>Zhengzhou University</strong> - Communication Engineering - Bachelor's Degree - <span class="date">2015.9-2019.6</span></li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>研究方向</h2>
-        <p>目前专注于研究与解决确定性网络技术理论与应用过程中的关键问题。</p>
-        
-        <h3>工程方面</h3>
-        <p>研究主要包括时间敏感网络仿真与实物平台研制。其中，本人提出的仿真中间件框架可以实现网络协议仿真、研发、测试等环节代码一致性问题，并提供了协议故障注入功能，方便用户对协议进行加错测试。该项工程研究成果已经被VTC2025接收。</p>
-        
-        <h3>理论方面</h3>
-        <p>研究包括分布式时间同步算法的开发与优化，旨在解决目前主从式时间同步方法在任务关键系统中可靠性低的问题，提高网络在不同故障场景下的容错能力；基于分布式容错原理提出了一套基于广播的容错时间同步算法(FTAS)。</p>
-        <p>此外，基于网络演算理论提出了一套实用网络演算算法，用于关键任务系统承载网络进行端到端延时的评估。针对强确定性业务，提出了一种时空资源分配算法，解决了这些业务路径与时隙分配问题。</p>
+        <h2>Research Focus</h2>
+        <p>Currently focused on researching and solving key problems in the theory and application of deterministic networking technologies.</p>
+
+        <h3>Engineering Aspects</h3>
+        <p>Research primarily involves Time-Sensitive Networking (TSN) simulation and physical platform development. I have proposed a simulation middleware framework that addresses code consistency issues across network protocol simulation, development, and testing phases, while also providing protocol fault injection capabilities for error testing. This engineering research achievement has been accepted by VTC2025.</p>
+
+        <h3>Theoretical Aspects</h3>
+        <p>Research includes the development and optimization of distributed time synchronization algorithms, aiming to solve the low reliability issue of master-slave time synchronization methods in mission-critical systems, thereby improving network fault tolerance in various failure scenarios. Based on distributed fault-tolerant principles, I have proposed a broadcast-based Fault-Tolerant Time Synchronization Algorithm (FTAS).</p>
+        <p>Additionally, based on network calculus theory, I have developed a practical network calculus algorithm for evaluating end-to-end delays in mission-critical system networks. For strongly deterministic services, I have proposed a spatiotemporal resource allocation algorithm that solves the path and time slot allocation problems for these services.</p>
     </div>
 
     <div class="section">
-        <h2>兴趣点</h2>
+        <h2>Research Interests</h2>
         <ul>
-            <li>正在探索将分布式时间同步策略应用于中国星网的可能性</li>
-            <li>扩展性探索一致性算法是否可用于其他值一致性检验</li>
-            <li>对基于AI的网络自动化运维、网络健康管理有浓厚兴趣</li>
-            <li>研究如何利用大模型对网络协议日志进行检测与根因分析</li>
+            <li>Exploring the extensibility of consensus algorithms for other value consistency verification</li>
+            <li>Strong interest in AI-based network automation operations and network health management</li>
+            <li>Research on utilizing large language models for network protocol log analysis and root cause detection</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>专业技能</h2>
+        <h2>Technical Skills</h2>
         <ul>
-            <li>具有完整的网络设备软硬件设计、调试、测试经历</li>
-            <li>具有项目申请书、技术协议、软硬件设计文档、测试报告等相关文档的撰写经验</li>
-            <li>有良好的英文阅读能力</li>
-            <li>熟悉计算机网络包括TSN、TCP/IP等网络协议，熟悉常见的流量整形、拥塞控制算法</li>
-            <li>熟悉C/C++、Python、Matlab、Verilog，熟悉常用的数据结构及算法</li>
-            <li>熟悉分布式原理、网络演算、近似算法设计等理论</li>
+            <li>Complete experience in network device hardware/software design, debugging, and testing</li>
+            <li>Extensive experience in writing project proposals, technical agreements, design documentation, and test reports</li>
+            <li>Strong English reading proficiency</li>
+            <li>Proficient in computer networks including TSN, TCP/IP protocols, and familiar with traffic shaping and congestion control algorithms</li>
+            <li>Proficient in C/C++, Python, Matlab, Verilog, with solid knowledge of data structures and algorithms</li>
+            <li>Familiar with distributed systems principles, network calculus, and approximation algorithm design theories</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>项目经历</h2>
+        <h2>Project Experience</h2>
         <div class="project">
-            <div class="project-title">"车载TSN时间敏感性网络技术"开发</div>
-            <div class="cooperator">合作单位: 北京车和家信息技术有限公司</div>
-            <div>职位: 项目主要负责人 <span class="date">2021.10-2023.10</span></div>
-            <p><strong>项目描述:</strong> 设计支持cut-through、支持IEEE 802.1Q vlan协议的千兆TSN交换机</p>
-            <p><strong>主要工作:</strong></p>
+            <div class="project-title">"In-Vehicle TSN (Time-Sensitive Networking) Technology" Development</div>
+            <div class="cooperator">Collaborating Organization: Beijing Li Auto Inc.</div>
+            <div>Position: Project Lead <span class="date">2021.10-2023.10</span></div>
+            <p><strong>Project Description:</strong> Designed a gigabit TSN switch supporting cut-through forwarding and the IEEE 802.1Q VLAN protocol.</p>
+            <p><strong>Main Responsibilities:</strong></p>
             <ul>
-                <li>与理想汽车合作完成车载TSN协议族的裁剪工作</li>
-                <li>完成TSN交换机架构设计</li>
-                <li>基于Qt研发TSN网络管理软件</li>
-                <li>实现TSN交换机交换部分逻辑设计与实现</li>
+                <li>Collaborated with Li Auto to complete the tailoring of the in-vehicle TSN protocol suite.</li>
+            <li>Completed the architectural design of the TSN switch.</li>
+                <li>Developed TSN network management software based on Qt.</li>
+                <li>Implemented the logical design and realization of the switching component for the TSN switch.</li>
             </ul>
         </div>
     </div>
 
     <div class="section">
-        <h2>论文发表</h2>
+        <h2>Papers</h2>
         <ol class="paper-list">
             <li><strong>Peng, Yifei</strong> et al. A Survey on In-Vehicle Time-Sensitive Networking. <em>IEEE Internet of Things Journal</em> 10(2023):14375-14396.</li>
-            <li><strong>Peng, Yifei</strong> et al. A Lightweight Code-Reusable Platform for Network Protocol Studies. [C], <em>Vehicular Technology Conference(VTC)</em>(2025)</li>
-            <li><strong>Peng, Yifei</strong> et al. A Distributed TSN Time Synchronization Algorithm with Increased Tolerance for Failure Scenarios. <em>International Conference on Computer and Communications(ICCC)</em>(2023):493-499.</li>
-            <li><strong>彭逸飞</strong>等. 时间触发以太网与时间敏感网络时钟同步失效对比分析[J]. <em>电子科技大学学报</em>, 2023,52(05):718-727.</li>
+            <li><strong>Peng, Yifei</strong> et al. A Lightweight Code-Reusable Platform for Network Protocol Studies. [C], <em>Vehicular Technology Conference (VTC)</em>(2025)</li>
+            <li><strong>Peng, Yifei</strong> et al. A Distributed TSN Time Synchronization Algorithm with Increased Tolerance for Failure Scenarios. <em>International Conference on Computer and Communications (ICCC)</em>(2023):493-499.</li>
+            <li><strong>Peng, Yifei</strong> et al. Comparative Analysis of Clock Synchronization Failures in Time-Triggered Ethernet and Time-Sensitive Networking. [J] <em>Journal of University of Electronic Science and Technology of China</em>, 2023,52(05):718-727.</li>
             <li><strong>Peng, Yifei</strong> et al. Research on Low-Latency TTP-TSN Cross-Domain Network Planning Problem. <em>Electronics</em>(2025)</li>
-            <li><strong>Peng, Yifei</strong> et al. Faulty Tolerant-IEEE 802.1AS clock synchronization algorithm analysis and verification[J], <em>Transactions on Industrial Informatics(TII)</em> (投递中)</li>
+            <li><strong>Peng, Yifei</strong> et al. Fault-Tolerant IEEE 802.1AS Clock Synchronization Algorithm Analysis and Verification[J], <em>Transactions on Industrial Informatics (TII)</em> (Under Review)</li>
         </ol>
     </div>
 
     <div class="section">
-        <h2>国家发明专利</h2>
+        <h2>Patents</h2>
         <ol class="patent-list">
-            <li>Bolin Huang,<strong>Peng, Yifei</strong>等. 一种适用于网络协议研发的轻量级代码可重用框架:202310998387.</li>
-            <li><strong>Peng, Yifei</strong>等. 兼容802.1AS的TSN网络分布式时间同步方法:202310998387.</li>
-            <li><strong>Peng, Yifei</strong>等. 一种适用于确定性网络协议的仿真方法及设备:CN114978926A. 2023.</li>
-            <li><strong>Peng, Yifei</strong>等. 一种时间触发无源光总线及其实现方法:CN113037372A. 2022.</li>
-            <li><strong>Peng, Yifei</strong>等. 高可靠性时间敏感网络时间同步方法及系统:CN113055116B. 2022.</li>
+            <li>Huang, Bolin, <strong>Peng, Yifei</strong> et al. A Lightweight Code-Reusable Framework for Network Protocol Research and Development: 202310998387.</li>
+            <li><strong>Peng, Yifei</strong> et al. Distributed Time Synchronization Method for 802.1AS-Compatible TSN Networks: 202310998387.</li>
+            <li><strong>Peng, Yifei</strong> et al. Simulation Method and Device for Deterministic Network Protocols: CN114978926A. 2023.</li>
+            <li><strong>Peng, Yifei</strong> et al. Time-Triggered Passive Optical Bus and Implementation Method: CN113037372A. 2022.</li>
+            <li><strong>Peng, Yifei</strong> et al. High-Reliability Time-Sensitive Network Time Synchronization Method and System: CN113055116B. 2022.</li>
         </ol>
     </div>
 
     <div class="section">
-        <h2>小结</h2>
-        <div class="summary">
-            本人具备网络设备开发的完整经验，具备从工程中抽象实际问题并进行理论分析的能力。对网络故障、网络攻击以及分布式原理有一定研究。此外对AIops，例如大规模网络日志分析、网络故障、网络异常的根因分析问题有着浓厚兴趣。
+        <h2>Hobbies</h2>
+
+
+        <!-- 图片轮播部分 -->
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <!-- 这里添加您的图片，替换下面的src为您的实际图片路径 -->
+            <img src="./GGJ.JPG" alt="Aroma Advertising Machine">
+            <img src="./GGJCad.jpg" alt="An Application of Aroma Advertising Machine">
+            <img src="./kdyCad.JPG" alt="AI Screen Controller">
+            <img src="./kdy.jpg" alt="An Application of AI Screen Controller ">
+
+        </div>
+
+        <!-- 轮播按钮 -->
+        <button class="carousel-btn prev-btn">&#10094;</button>
+        <button class="carousel-btn next-btn">&#10095;</button>
+
+        <!-- 轮播指示器 -->
+        <div class="carousel-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+
+        <!-- 图片标题 -->
+        <div class="carousel-caption">
+            <h3>Some Interesting Makes</h3>
         </div>
     </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Summary</h2>
+        <div class="summary">
+            I possess comprehensive experience in network device development and the ability to abstract practical problems from engineering for theoretical analysis. I have conducted research on network failures, network attacks, and distributed system principles. Additionally, I have a strong interest in AIOps, particularly in areas such as large-scale network log analysis, and root cause analysis of network failures and anomalies.
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        // 轮播图功能实现
+        document.addEventListener('DOMContentLoaded', function() {
+            const slide = document.querySelector('.carousel-slide');
+            const images = document.querySelectorAll('.carousel-slide img');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const indicators = document.querySelectorAll('.indicator');
+
+            let currentIndex = 0;
+            const totalImages = images.length;
+            const slideWidth = 100; // 100% 宽度
+
+            // 自动轮播
+            let autoSlide = setInterval(nextSlide, 5000);
+
+            // 下一张图片
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalImages;
+                updateSlide();
+            }
+
+            // 上一张图片
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                updateSlide();
+            }
+
+            // 更新轮播图
+            function updateSlide() {
+                slide.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
+                // 更新指示器
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+
+                // 重置自动轮播计时器
+                clearInterval(autoSlide);
+                autoSlide = setInterval(nextSlide, 5000);
+            }
+
+            // 点击指示器跳转到对应图片
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateSlide();
+                });
+            });
+
+            // 按钮事件监听
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // 鼠标悬停时暂停自动轮播
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlide);
+            });
+
+            carouselContainer.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(nextSlide, 5000);
+            });
+
+            // 触摸滑动支持（移动端）
+            let startX = 0;
+            let endX = 0;
+
+            carouselContainer.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            carouselContainer.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (startX - endX > 50) {
+                    // 向左滑动，下一张
+                    nextSlide();
+                } else if (endX - startX > 50) {
+                    // 向右滑动，上一张
+                    prevSlide();
+                }
+            }
+        });
+    </script>
 </body>
 </html>
